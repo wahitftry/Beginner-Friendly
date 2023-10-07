@@ -19,16 +19,7 @@ name = "java"
 name = "clang-format"
 
 [[transformers]]
-name = "yapf"
-
-[[transformers]]
-name = "autopep8"
-
-[[transformers]]
 name = "black"
-
-[[transformers]]
-name = "isort"
 
 [[transformers]]
 name = "google-java-format"
