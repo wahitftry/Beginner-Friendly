@@ -25,7 +25,6 @@ snake_length = 1
 FOOD_SIZE = 10
 food_x = round(random.randrange(0, WINDOW_WIDTH - FOOD_SIZE) / 10.0) * 10.0
 food_y = round(random.randrange(0, WINDOW_HEIGHT - FOOD_SIZE) / 10.0) * 10.0
-score = 0
 
 def main():
     """
@@ -48,6 +47,15 @@ def main():
         ...
     """
     game_over = False
+    snake_x = WINDOW_WIDTH / 2
+    snake_y = WINDOW_HEIGHT / 2
+    snake_x_change = 0
+    snake_y_change = 0
+    snake_list = []
+    snake_length = 1
+    food_x = round(random.randrange(0, WINDOW_WIDTH - FOOD_SIZE) / 10.0) * 10.0
+    food_y = round(random.randrange(0, WINDOW_HEIGHT - FOOD_SIZE) / 10.0) * 10.0
+    score = 0
     while not game_over:
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
