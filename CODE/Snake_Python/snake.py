@@ -1,5 +1,6 @@
-import pygame
 import random
+
+import pygame
 
 pygame.init()
 
@@ -25,6 +26,7 @@ snake_length = 1
 FOOD_SIZE = 10
 food_x = round(random.randrange(0, WINDOW_WIDTH - FOOD_SIZE) / 10.0) * 10.0
 food_y = round(random.randrange(0, WINDOW_HEIGHT - FOOD_SIZE) / 10.0) * 10.0
+
 
 def main():
     """
@@ -54,7 +56,8 @@ def main():
     snake_list = []
     snake_length = 1
     food_x = round(random.randrange(0, WINDOW_WIDTH - FOOD_SIZE) / 10.0) * 10.0
-    food_y = round(random.randrange(0, WINDOW_HEIGHT - FOOD_SIZE) / 10.0) * 10.0
+    food_y = round(random.randrange(
+        0, WINDOW_HEIGHT - FOOD_SIZE) / 10.0) * 10.0
     score = 0
     while not game_over:
         for event in pygame.event.get():
@@ -78,12 +81,19 @@ def main():
         snake_y += snake_y_change
 
         if snake_x == food_x and snake_y == food_y:
-            food_x = round(random.randrange(0, WINDOW_WIDTH - FOOD_SIZE) / 10.0) * 10.0
-            food_y = round(random.randrange(0, WINDOW_HEIGHT - FOOD_SIZE) / 10.0) * 10.0
+            food_x = round(random.randrange(
+                0, WINDOW_WIDTH - FOOD_SIZE) / 10.0) * 10.0
+            food_y = round(random.randrange(
+                0, WINDOW_HEIGHT - FOOD_SIZE) / 10.0) * 10.0
             snake_length += 1
             score += 10
 
-        if snake_x < 0 or snake_x >= WINDOW_WIDTH or snake_y < 0 or snake_y >= WINDOW_HEIGHT:
+        if (
+            snake_x < 0
+            or snake_x >= WINDOW_WIDTH
+            or snake_y < 0
+            or snake_y >= WINDOW_HEIGHT
+        ):
             game_over = True
 
         snake_head = [snake_x, snake_y]
@@ -97,7 +107,9 @@ def main():
         WINDOW.fill(BLACK)
         pygame.draw.rect(WINDOW, GREEN, [food_x, food_y, FOOD_SIZE, FOOD_SIZE])
         for segment in snake_list:
-            pygame.draw.rect(WINDOW, WHITE, [segment[0], segment[1], SNAKE_SIZE, SNAKE_SIZE])
+            pygame.draw.rect(
+                WINDOW, WHITE, [segment[0], segment[1], SNAKE_SIZE, SNAKE_SIZE]
+            )
 
         score_text = FONT.render("Score: " + str(score), True, RED)
         WINDOW.blit(score_text, [10, 10])
@@ -106,6 +118,7 @@ def main():
 
     pygame.quit()
     print("Final Score: " + str(score))
+
 
 if __name__ == "__main__":
     main()
