@@ -16,15 +16,7 @@ RED = (255, 0, 0)
 GREEN = (0, 255, 0)
 SNAKE_SIZE = 10
 SNAKE_SPEED = 10
-snake_x = WINDOW_WIDTH / 2
-snake_y = WINDOW_HEIGHT / 2
-snake_x_change = 0
-snake_y_change = 0
-snake_list = []
-snake_length = 1
 FOOD_SIZE = 10
-food_x = round(random.randrange(0, WINDOW_WIDTH - FOOD_SIZE) / 10.0) * 10.0
-food_y = round(random.randrange(0, WINDOW_HEIGHT - FOOD_SIZE) / 10.0) * 10.0
 
 def main():
     """
