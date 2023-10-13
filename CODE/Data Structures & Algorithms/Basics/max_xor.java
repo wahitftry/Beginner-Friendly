@@ -8,26 +8,25 @@ Example:-
 
 arr[] = {1,2,3,4}
 Output: 7
-Explanation: 
+Explanation:
 The subarray {3,4} has maximum xor value equal to 7.
 
 */
 
 class xor {
-	static int max_xor(int arr[], int n){
-		int maxXor = 0;
-		for (int i = 0; i < n; i++){
-			for (int j = i + 1; j < n; j++){
-				maxXor = Math.max(maxXor,
-						arr[i] ^ arr[j]);
-			}
-		}
-		return maxXor;
-	}
-	public static void main(String[] args) {
-		int arr[] = {25, 10, 2, 8, 5, 3};
-		int n = arr.length;
-		System.out.println(max_xor(arr, n));
-	}
-} 
+  static int max_xor(int arr[], int n) {
+    int maxXor = 0;
+    for (int i = 0; i < n; i++) {
+      for (int j = i + 1; j < n; j++) {
+        maxXor = Math.max(maxXor, arr[i] ^ arr[j]);
+      }
+    }
+    return maxXor;
+  }
 
+  public static void main(String[] args) {
+    int arr[] = {25, 10, 2, 8, 5, 3};
+    int n = arr.length;
+    System.out.println(max_xor(arr, n));
+  }
+}
